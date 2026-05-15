@@ -9,7 +9,7 @@ Python 3.10+ wird vorausgesetzt. Externe Abhängigkeiten gibt es keine
 (`requirements.txt` ist leer).
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/GermanTicketGuy/lernkarten-trainer.git
 cd lernkarten-trainer
 ```
 
