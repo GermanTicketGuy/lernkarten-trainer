@@ -3,6 +3,8 @@
 Ein Lernkarten-Trainer fürs Terminal — mit ASCII-Design, sechs Farb-Themes,
 gewichteter Wiederholungslogik und interaktiver Pfeil-/Vim-Navigation.
 
+<img width="1043" height="657" alt="Bildschirmfoto 2026-05-15 um 18 33 54" src="https://github.com/user-attachments/assets/e2fd8181-2baf-4868-82a9-fa590bd954e9" />
+
 ## Installation
 
 Python 3.10+ wird vorausgesetzt. Externe Abhängigkeiten gibt es keine
