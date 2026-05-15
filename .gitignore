@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Claude Code lokale Daten
+.claude/
+
+# Daten / Decks (sollen nicht ins Repo) — Beispiel-Deck als Ausnahme behalten
+data/*.json
+!data/.gitkeep
+!data/example_deck.json

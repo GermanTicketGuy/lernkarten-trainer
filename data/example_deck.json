@@ -1,0 +1,86 @@
+[
+  {
+    "question": "Was ist ein Betriebssystem?",
+    "answer": "Systemsoftware, die Hardware-Ressourcen verwaltet und Anwendungen eine Ausführungsumgebung bietet.",
+    "category": "Betriebssysteme",
+    "correct_count": 4,
+    "wrong_count": 1
+  },
+  {
+    "question": "Was bedeutet preemptives Multitasking?",
+    "answer": "Das Betriebssystem entzieht laufenden Prozessen die CPU, um sie an andere Prozesse zu vergeben — der Scheduler entscheidet, nicht der Prozess.",
+    "category": "Betriebssysteme",
+    "correct_count": 2,
+    "wrong_count": 3
+  },
+  {
+    "question": "Was ist ein Deadlock?",
+    "answer": "Ein Zustand, in dem zwei oder mehr Prozesse blockieren, weil jeder auf eine Ressource wartet, die ein anderer hält.",
+    "category": "Betriebssysteme",
+    "correct_count": 5,
+    "wrong_count": 0
+  },
+  {
+    "question": "Wofür steht die Abkürzung \"API\"?",
+    "answer": "Application Programming Interface — eine definierte Schnittstelle, über die Software miteinander kommuniziert.",
+    "category": "Software-Engineering",
+    "correct_count": 7,
+    "wrong_count": 1
+  },
+  {
+    "question": "Was ist virtueller Speicher?",
+    "answer": "Abstraktionsschicht, die jedem Prozess einen eigenen, zusammenhängenden Adressraum vorspiegelt — physisch aufgeteilt auf RAM und Swap.",
+    "category": "Betriebssysteme",
+    "correct_count": 1,
+    "wrong_count": 2
+  },
+  {
+    "question": "Was unterscheidet einen Prozess von einem Thread?",
+    "answer": "Ein Prozess besitzt eigenen Speicher und Ressourcen; Threads teilen sich den Adressraum ihres Prozesses und sind leichter zu erzeugen.",
+    "category": "Betriebssysteme",
+    "correct_count": 3,
+    "wrong_count": 2
+  },
+  {
+    "question": "Was macht ein Scheduler?",
+    "answer": "Er entscheidet, welcher rechenbereite Prozess als nächstes die CPU bekommt — nach Strategien wie Round-Robin, Priority oder MLFQ.",
+    "category": "Betriebssysteme",
+    "correct_count": 2,
+    "wrong_count": 0
+  },
+  {
+    "question": "Was ist eine Race Condition?",
+    "answer": "Fehler durch unkontrollierten gleichzeitigen Zugriff mehrerer Threads auf eine geteilte Ressource — das Ergebnis hängt vom Zeitablauf ab.",
+    "category": "Nebenläufigkeit",
+    "correct_count": 0,
+    "wrong_count": 1
+  },
+  {
+    "question": "Wofür steht REST?",
+    "answer": "Representational State Transfer — ein Architekturstil für Web-APIs auf Basis von HTTP-Methoden und Ressourcen-URLs.",
+    "category": "Software-Engineering",
+    "correct_count": 3,
+    "wrong_count": 1
+  },
+  {
+    "question": "Was ist Polymorphie in der OOP?",
+    "answer": "Die Fähigkeit, dass dieselbe Methode auf Objekten unterschiedlicher Klassen je nach Typ unterschiedliches Verhalten zeigt.",
+    "category": "Software-Engineering",
+    "correct_count": 2,
+    "wrong_count": 2
+  },
+  {
+    "question": "Was ist der Unterschied zwischen TCP und UDP?",
+    "answer": "TCP ist verbindungsorientiert und garantiert die Reihenfolge der Pakete; UDP ist verbindungslos, schneller, aber unzuverlässig.",
+    "category": "Netzwerke",
+    "correct_count": 1,
+    "wrong_count": 0
+  },
+  {
+    "question": "Was ist die Aufgabe von DNS?",
+    "answer": "DNS übersetzt menschenlesbare Domainnamen (z. B. example.com) in IP-Adressen.",
+    "category": "Netzwerke",
+    "correct_count": 4,
+    "wrong_count": 0
+  }
+]
