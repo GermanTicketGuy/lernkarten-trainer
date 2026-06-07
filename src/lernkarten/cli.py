@@ -55,7 +55,7 @@ TITLE_BIG = r"""
 ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝
 """.strip("\n")
 
-SUBTITLE = "░▒▓ T R A I N E R ▓▒░   ·   spaced-repetition flashcards   ·   v1.0"
+SUBTITLE = "░▒▓ T R A I N E R ▓▒░   ·   spaced-repetition flashcards   v1.1.0"
 
 # Box-Glyphen
 H, V = "─", "│"
@@ -285,6 +285,25 @@ def _action_remove(deck: Deck, inp: InputFn, out: OutputFn, theme: Theme) -> Non
     out(paint(f"\n  ✓ Karte entfernt: {removed.question}", theme.accent))
 
 
+def _ask_rating(inp: InputFn, out: OutputFn, theme: Theme) -> bool | str:
+    """Fragt die Bewertung ab und akzeptiert nur ja/nein (bzw. Abbruch).
+
+    Rückgabe: ``True`` (richtig), ``False`` (falsch) oder ``"abort"`` (Abbruch).
+    Bei ungültiger Eingabe wird so lange neu gefragt, bis eine gültige kommt.
+    """
+    rating = _prompt(inp, "Richtig? [j/n]    ·    [x] Session beenden » ", theme).strip().lower()
+    match rating:
+        case "x" | "q" | "quit" | "exit":
+            return "abort"
+        case "j" | "ja" | "y" | "yes":
+            return True
+        case "n" | "nein" | "no":
+            return False
+        case _:
+            out(paint("  ✗ Bitte nur mit j (ja) oder n (nein) antworten.", theme.accent))
+            return _ask_rating(inp, out, theme)
+
+
 def _action_train(deck: Deck, inp: InputFn, out: OutputFn, theme: Theme) -> None:
     out(_title_line("LERNSESSION", theme))
     if len(deck) == 0:
@@ -316,11 +335,11 @@ def _action_train(deck: Deck, inp: InputFn, out: OutputFn, theme: Theme) -> None
             aborted = True
             break
         out(f"\n  {paint('=', theme.accent, bold=True)}  {card.answer}\n")
-        rating = _prompt(inp, "Richtig? [j/n]    ·    [x] Session beenden » ", theme).strip().lower()
-        if rating in ("x", "q", "quit", "exit"):
+        rating = _ask_rating(inp, out, theme)
+        if rating == "abort":
             aborted = True
             break
-        session.grade(card, correct=rating in ("j", "ja", "y", "yes"))
+        session.grade(card, correct=rating)
     if aborted:
         out(paint(f"\n  ✓ Session abgebrochen. {session.answered} Karte(n) beantwortet.", theme.accent))
     else:
